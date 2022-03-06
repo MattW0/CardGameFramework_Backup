@@ -5,8 +5,7 @@ using Mirror;
 
 public class DragDrop : NetworkBehaviour
 {
-    public PlayerManager playerManager;
-
+    public Player p;
     private GameObject Canvas;
     private GameObject startParent;
     private GameObject dropZone;
@@ -16,14 +15,14 @@ public class DragDrop : NetworkBehaviour
     public float returnDuration = 0.9f;
     public float timeStartReturn = 0f;
 
-    private bool isDragging = false;
+    public bool isDragging = false;
     private bool isOverDropZone = false;
     private bool isDraggable = false;
     private bool isReturning = false;
 
     private void Start()
     {
-        Canvas = GameObject.Find("Main Canvas");
+        Canvas = GameObject.Find("Canvas");
         if (hasAuthority)
         {
             isDraggable = true;
@@ -33,10 +32,10 @@ public class DragDrop : NetworkBehaviour
     // Update is called once per frame
     void Update()
     {
-
         if (isDragging)
         {
             transform.position = new Vector2(Input.mousePosition.x, Input.mousePosition.y);
+            Debug.Log("Dragging"+transform.position);
             transform.SetParent(Canvas.transform, true);
         }
         // Return card to original position
@@ -44,7 +43,6 @@ public class DragDrop : NetworkBehaviour
         {
             transform.position = Vector2.Lerp(transform.position, startPosition, timeStartReturn);
             timeStartReturn += Time.deltaTime;
-            Debug.Log("Returning since: " + timeStartReturn);
 
             // If position is close enough to startPosition, then stop
             if (Vector2.Distance(transform.position, startPosition) < 0.1f)
@@ -76,6 +74,7 @@ public class DragDrop : NetworkBehaviour
         isDragging = true;
         startParent = transform.parent.gameObject;
         startPosition = transform.position;
+        Debug.Log("StartDrag:"+startPosition.ToString());
     }
 
     public void EndDrag()
@@ -89,8 +88,8 @@ public class DragDrop : NetworkBehaviour
             transform.SetParent(dropZone.transform, false);
             isDraggable = false;
             NetworkIdentity networkIdentity = NetworkClient.connection.identity;
-            playerManager = networkIdentity.GetComponent<PlayerManager>();
-            playerManager.PlayCard(gameObject);
+            p = networkIdentity.GetComponent<Player>();
+            // p.PlayCard(gameObject);
         }
         else
         {

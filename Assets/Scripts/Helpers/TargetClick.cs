@@ -5,20 +5,20 @@ using Mirror;
 
 public class TargetClick : NetworkBehaviour
 {
-    public PlayerManager playerManager;
+    public Player p;
 
     public void OnTargetClick()
     {
         NetworkIdentity networkIdentity = NetworkClient.connection.identity;
-        playerManager = networkIdentity.GetComponent<PlayerManager>();
+        p = networkIdentity.GetComponent<Player>();
 
         if (hasAuthority)
         {
-            playerManager.CmdTargetSelfCard();
+            p.CmdTargetSelfCard();
         }
         else
         {
-            playerManager.CmdTargetOtherCard(gameObject);
+            p.CmdTargetOtherCard(gameObject);
         }
 
     }

@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+// Scriptable object that contains all card information
 [CreateAssetMenu(fileName = "New Card", menuName ="Card")]
 public class CardInfo : ScriptableObject
 {

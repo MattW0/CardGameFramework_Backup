@@ -5,32 +5,40 @@ using UnityEngine.UI;
 
 public class CardFlipper : MonoBehaviour
 {
-    public Sprite cardFront;
-    public Sprite cardBack;
-
+    private bool frontUp = true;
     public void Flip()
     {
-        Sprite currenSprite = gameObject.GetComponent<Image>().sprite;
-
-        if (currenSprite == cardFront)
+        if (frontUp)
         {
-            gameObject.GetComponent<Image>().sprite = cardBack;
+            gameObject.GetComponent<Image>().sprite = Resources.Load<Sprite>("Sprites/cardBack");
 
             // Hiding text and other info
             for (int i = 0; i < gameObject.transform.childCount; i++)
             {
                 gameObject.transform.GetChild(i).gameObject.SetActive(false);
             }
+
+            frontUp = false;
         }
+
         else
         {
-            gameObject.GetComponent<Image>().sprite = cardFront;
+            if (gameObject.GetComponent<CardDisplay>().isCopper)
+            {
+                gameObject.GetComponent<Image>().sprite = Resources.Load<Sprite>("Sprites/copper");
+            }
+            else
+            {
+                gameObject.GetComponent<Image>().sprite = Resources.Load<Sprite>("Sprites/cardFront");
+            }
 
             // Showing text and other info
             for (int i = 0; i < gameObject.transform.childCount; i++)
             {
                 gameObject.transform.GetChild(i).gameObject.SetActive(true);
             }
+
+            frontUp = true;
         }
     }
 }

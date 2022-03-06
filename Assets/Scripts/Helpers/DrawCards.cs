@@ -5,12 +5,11 @@ using Mirror;
 
 public class DrawCards : NetworkBehaviour
 {
-    private PlayerManager playerManager;
+    private Player player;
     public void OnClick()
     {
         NetworkIdentity networkIdentity = NetworkClient.connection.identity;
-        playerManager = networkIdentity.GetComponent<PlayerManager>();
-        playerManager.CmdDrawCards();
+        player = networkIdentity.GetComponent<Player>();
+        player.CmdDrawCards();
     }
-
 }

@@ -9,7 +9,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: edc9517a816554b4a849eed41fdf595d, type: 3}
+  m_Script: {fileID: 11500000, guid: 29d4f40f22852f349afdab2872ef87b7, type: 3}
   m_Name: Rosina
   m_EditorClassIdentifier: 
   title: Rosina

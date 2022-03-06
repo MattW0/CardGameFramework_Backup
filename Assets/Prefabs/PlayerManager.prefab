@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 6745703798424063428}
   - component: {fileID: 4843779232599784861}
   - component: {fileID: 2425903904599829270}
+  - component: {fileID: -2934792117940721452}
   m_Layer: 0
   m_Name: PlayerManager
   m_TagString: Untagged
@@ -94,8 +95,21 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   syncMode: 0
   syncInterval: 0.1
+  gameManager: {fileID: 454590288018674183, guid: e361345476e958645b05d8590df70bdc,
+    type: 3}
+--- !u!114 &-2934792117940721452
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7091936122045143929}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 76de667e741e5f743ab762ffa5eb7d32, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  syncMode: 0
+  syncInterval: 0.1
+  Copper: {fileID: 2818863722588096961, guid: adddd9bd97662a744b4ecaf88c7dec2d, type: 3}
   Card: {fileID: 5581127365482697954, guid: 53ed448a4cc9e1a489e1e3b304bf255b, type: 3}
-  PlayerArea: {fileID: 0}
-  OpponentArea: {fileID: 0}
-  PlayerDropzone: {fileID: 0}
-  OpponentDropzone: {fileID: 0}

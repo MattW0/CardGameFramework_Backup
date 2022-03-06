@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &4747901447713083285
+--- !u!1 &6715818317317024312
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -8,10 +8,10 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 5905881191533266768}
-  - component: {fileID: 8486056415875142291}
-  - component: {fileID: 1918403072687372202}
-  - component: {fileID: -7927775075527209143}
+  - component: {fileID: 5558965572361659133}
+  - component: {fileID: 7571687052792035134}
+  - component: {fileID: 454590288018674183}
+  - component: {fileID: 5004454154717752025}
   m_Layer: 0
   m_Name: GameManager
   m_TagString: Untagged
@@ -19,28 +19,28 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &5905881191533266768
+--- !u!4 &5558965572361659133
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4747901447713083285}
+  m_GameObject: {fileID: 6715818317317024312}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 788.0965, y: 444.73526, z: -126.23853}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &8486056415875142291
+--- !u!114 &7571687052792035134
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4747901447713083285}
+  m_GameObject: {fileID: 6715818317317024312}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 9b91ecbcc199f4492b9a91e820070131, type: 3}
@@ -51,13 +51,13 @@ MonoBehaviour:
   visible: 0
   m_AssetId: e361345476e958645b05d8590df70bdc
   hasSpawned: 0
---- !u!114 &1918403072687372202
+--- !u!114 &454590288018674183
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4747901447713083285}
+  m_GameObject: {fileID: 6715818317317024312}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: a537c7df83a720945b3129677feeb40e, type: 3}
@@ -66,16 +66,19 @@ MonoBehaviour:
   syncMode: 0
   syncInterval: 0.1
   turnsPlayed: 0
---- !u!114 &-7927775075527209143
+  playersReady: 0
+  PlayerManager: {fileID: 7091936122045143929, guid: 80488dfeec6c53a45b8f8b79a18786b5,
+    type: 3}
+--- !u!114 &5004454154717752025
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4747901447713083285}
+  m_GameObject: {fileID: 6715818317317024312}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a90f1a7d0a57e2c42935e39892fe7537, type: 3}
+  m_Script: {fileID: 11500000, guid: facc4585fae7f1049ae421f7e8de5dea, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cards: []
+  reloadJson: 0
